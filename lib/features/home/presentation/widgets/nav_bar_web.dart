@@ -44,7 +44,6 @@ class NavBarWeb extends StatelessWidget {
                     onTap: () => onNavItemTap(4),
                   ),
                   SizedBox(width: 32),
-
                   HoverTextButton(
                     text: 'Contact Me',
                     onTap: () => onNavItemTap(5),

@@ -10,7 +10,7 @@ class AppTheme {
       primary: AppColors.primary,
       secondary: AppColors.accent,
       surface: AppColors.surfaceLight,
-      // background: AppColors.backgroundLight, // Deprecated
+      // background: AppColors.backgroundLight, // مهملة
       error: AppColors.error,
     ),
     scaffoldBackgroundColor: AppColors.backgroundLight,
@@ -33,7 +33,7 @@ class AppTheme {
       primary: AppColors.primary,
       secondary: AppColors.accent,
       surface: AppColors.surfaceDark,
-      // background: AppColors.backgroundDark, // Deprecated
+      // background: AppColors.backgroundDark, // مهملة
       error: AppColors.error,
     ),
     scaffoldBackgroundColor: AppColors.backgroundDark,

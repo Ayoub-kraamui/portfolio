@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/home_scroll_controller.dart';
-import 'package:portfolio/features/portfolio/presentation/widgets/nav_bar_mobile.dart';
-import 'package:portfolio/features/portfolio/presentation/widgets/nav_bar_web.dart';
+import 'package:portfolio/features/home/presentation/widgets/nav_bar_mobile.dart';
+import 'package:portfolio/features/home/presentation/widgets/nav_bar_web.dart';
 
 class InitialScreen extends StatelessWidget {
   const InitialScreen({super.key, required this.scrollController});

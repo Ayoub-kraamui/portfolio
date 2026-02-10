@@ -1,12 +1,14 @@
 import 'package:equatable/equatable.dart';
-import '../../data/portfolio_models.dart';
+import '../../data/models/project_model.dart';
+import '../../data/models/skill_models.dart';
+import '../../data/models/experience_models.dart';
 
 enum PortfolioStatus { initial, loading, loaded, error }
 
 class PortfolioState extends Equatable {
   final PortfolioStatus status;
-  final List<Experience> experiences;
-  final List<Skill> skills;
+  final List<ExperienceModels> experiences;
+  final List<SkillModels> skills;
   final List<ProjectModel> projects;
 
   const PortfolioState({
@@ -18,8 +20,8 @@ class PortfolioState extends Equatable {
 
   PortfolioState copyWith({
     PortfolioStatus? status,
-    List<Experience>? experiences,
-    List<Skill>? skills,
+    List<ExperienceModels>? experiences,
+    List<SkillModels>? skills,
     List<ProjectModel>? projects,
   }) {
     return PortfolioState(

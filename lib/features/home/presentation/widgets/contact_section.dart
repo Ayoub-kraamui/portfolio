@@ -3,7 +3,9 @@ import '../../../../core/constants/app_strings.dart';
 import '../../../../shared/widgets/section_title.dart';
 import '../../../../shared/widgets/custom_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../bloc/portfolio_bloc.dart';
+import '../bloc/portfolio_event.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
@@ -32,19 +34,25 @@ class ContactSection extends StatelessWidget {
               CustomButton(
                 label: 'Email Me',
                 icon: Icons.email,
-                onPressed: () => _launchUrl('mailto:${AppStrings.email}'),
+                onPressed: () => context.read<PortfolioBloc>().add(
+                  const OpenLinkEvent('mailto:${AppStrings.email}'),
+                ),
                 isOutline: true,
               ),
               CustomButton(
                 label: 'LinkedIn',
                 icon: FontAwesomeIcons.linkedin,
-                onPressed: () => _launchUrl('https://${AppStrings.linkedin}'),
+                onPressed: () => context.read<PortfolioBloc>().add(
+                  const OpenLinkEvent('https://${AppStrings.linkedin}'),
+                ),
                 isOutline: true,
               ),
               CustomButton(
                 label: 'Call Me',
                 icon: Icons.phone,
-                onPressed: () => _launchUrl('tel:${AppStrings.phone}'),
+                onPressed: () => context.read<PortfolioBloc>().add(
+                  const OpenLinkEvent('tel:${AppStrings.phone}'),
+                ),
                 isOutline: true,
               ),
             ],
@@ -57,12 +65,5 @@ class ContactSection extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Future<void> _launchUrl(String url) async {
-    final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    }
   }
 }

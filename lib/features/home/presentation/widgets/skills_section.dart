@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../shared/widgets/section_title.dart';
-import '../../data/portfolio_models.dart';
+import '../../data/models/skill_models.dart';
 
 class SkillsSection extends StatelessWidget {
-  final List<Skill> skills;
+  final List<SkillModels> skills;
 
   const SkillsSection({super.key, required this.skills});
 
   @override
   Widget build(BuildContext context) {
-    // Group skills by category
-    final Map<String, List<Skill>> skillsByCategory = {};
+    // تجميع المهارات حسب الفئة
+    final Map<String, List<SkillModels>> skillsByCategory = {};
     for (var skill in skills) {
       final category = skill.category ?? 'Other';
       if (!skillsByCategory.containsKey(category)) {
@@ -20,14 +20,24 @@ class SkillsSection extends StatelessWidget {
       skillsByCategory[category]!.add(skill);
     }
 
-    // Define the order of categories as requested
+    // ترتيب الفئات حسب الطلب
     final orderedCategories = [
       'Information Technology',
       'State Management',
       'Clean Architecture',
       'Agentic Ai',
       'Digital Marketing',
+      'Project Management',
     ];
+
+    // تصفية الفئات الفارغة
+    final activeCategories = orderedCategories
+        .where(
+          (c) =>
+              skillsByCategory.containsKey(c) &&
+              skillsByCategory[c]!.isNotEmpty,
+        )
+        .toList();
 
     return Container(
       width: double.infinity,
@@ -37,16 +47,47 @@ class SkillsSection extends StatelessWidget {
         children: [
           const Center(child: SectionTitle(title: AppStrings.skillsTitle)),
           const SizedBox(height: 40),
-          Wrap(
-            spacing: 20,
-            runSpacing: 20,
-            alignment: WrapAlignment.center,
-            runAlignment: WrapAlignment.center,
-            children: orderedCategories.map((category) {
-              final categorySkills = skillsByCategory[category] ?? [];
-              if (categorySkills.isEmpty) return const SizedBox.shrink();
-              return _buildCategoryCard(context, category, categorySkills);
-            }).toList(),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final width = constraints.maxWidth;
+              int columns = 1;
+              if (width > 1100) {
+                columns = 3;
+              } else if (width > 700) {
+                columns = 2;
+              }
+
+              // توزيع الفئات على الأعمدة
+              List<List<String>> columnData = List.generate(columns, (_) => []);
+              for (int i = 0; i < activeCategories.length; i++) {
+                columnData[i % columns].add(activeCategories[i]);
+              }
+
+              return Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: List.generate(columns, (colIndex) {
+                  return Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: colIndex != columns - 1 ? 20.0 : 0.0,
+                      ),
+                      child: Column(
+                        children: columnData[colIndex].map((category) {
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 20.0),
+                            child: _buildCategoryCard(
+                              context,
+                              category,
+                              skillsByCategory[category]!,
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  );
+                }),
+              );
+            },
           ),
         ],
       ),
@@ -56,10 +97,10 @@ class SkillsSection extends StatelessWidget {
   Widget _buildCategoryCard(
     BuildContext context,
     String title,
-    List<Skill> skills,
+    List<SkillModels> skills,
   ) {
     return Container(
-      width: 350, // Fixed width for cleaner grid-like look in wrap
+      width: double.infinity,
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.1),
@@ -77,7 +118,7 @@ class SkillsSection extends StatelessWidget {
         ],
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             title,
@@ -90,6 +131,7 @@ class SkillsSection extends StatelessWidget {
           Wrap(
             spacing: 8,
             runSpacing: 8,
+            alignment: WrapAlignment.center,
             children: skills
                 .map((skill) => _buildSkillChip(context, skill))
                 .toList(),
@@ -99,7 +141,7 @@ class SkillsSection extends StatelessWidget {
     );
   }
 
-  Widget _buildSkillChip(BuildContext context, Skill skill) {
+  Widget _buildSkillChip(BuildContext context, SkillModels skill) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(

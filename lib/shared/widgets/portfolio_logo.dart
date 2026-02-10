@@ -60,21 +60,16 @@ class _LogoMobile extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 36,
-          height: 36,
-          decoration: BoxDecoration(
-            //color: ColorsManager.primary,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: const Center(
-            child: Text(
-              'O',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
+          width: 40,
+          height: 40,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
+          child: IconButton(
+            icon: Icon(
+              context.watch<ThemeCubit>().state == ThemeMode.light
+                  ? Icons.dark_mode
+                  : Icons.light_mode,
             ),
+            onPressed: () => context.read<ThemeCubit>().toggleTheme(),
           ),
         ),
         const SizedBox(width: 8),

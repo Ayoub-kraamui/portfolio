@@ -9,24 +9,36 @@ class AppStrings {
 
   // Hero Section
   static const String heroGreeting = 'Hello, I\'m';
-  static const String heroName = 'Ayoub Kraamui';
+  static const String heroName = 'Ayoub Karami';
   static const String heroTitle = 'Software Engineer';
   static const String heroSubTitle = 'Flutter & Odoo Developer';
   static const String heroDescription =
       'I build beautiful, responsive, and high-performance applications.';
   static const String downloadCv = 'Download CV';
 
+  // New Hero Strings
+  static const String heroBadge = 'Welcome to my portfolio';
+  static const String heroHeadlineStart = 'Building digital';
+  static const String heroHeadlineMiddle = 'products, brands,';
+  static const String heroHeadlineEnd = 'and experiences.';
+  static const String statsExp = 'Years Exp.';
+  static const String statsProjects = 'Projects';
+  static const String statsClients = 'Clients';
+  static const String githubProfile = 'GitHub Profile';
+
   // About Section
   static const String aboutTitle = 'About Me';
-  static const String aboutDescription =
-      'Information Technology Engineer from University of Science and Technology.\n'
-      'Specialized in mobile application development using Flutter framework.\n'
-      'Front-end development using Flutter, back-end development using PHP, Rest api, Firebase.\n'
-      'Information Technology project management using Waterfall and Agile methodology.\n'
-      'UX-UI designer using figma and adobe xd.\n'
-      'Graphic Designer using Adobe programs.\n'
-      'Able to work in a team.\n'
-      'I continuously seek to develop my skills to contribute to achieving the goals of the organizations I will work with.';
+  static const List<String> aboutDescription = [
+    'Information Technology Engineer from University of Science and Technology.',
+    'Specialized in mobile application development using Flutter framework.',
+    'Front-end development using Flutter, back-end development using PHP, Rest API, Firebase.',
+    'Junior Odoo Developer specialized in Python, with hands-on experience in developing and customizing Odoo modules, working with XML views, PostgreSQL database, and REST API integration.',
+    'Information Technology project management using Waterfall and Agile methodology.',
+    'UX-UI designer using Figma and Adobe XD.',
+    'Graphic Designer using Adobe programs.',
+    'Able to work effectively in a team.',
+    'I continuously seek to develop my skills to contribute to achieving the goals of the organizations I will work with.',
+  ];
 
   // Experience Section
   static const String experienceTitle = 'Experience';
