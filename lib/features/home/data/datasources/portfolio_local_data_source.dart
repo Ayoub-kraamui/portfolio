@@ -169,7 +169,7 @@ class PortfolioLocalDataSourceImpl implements PortfolioLocalDataSource {
       ProjectModel(
         title: 'Note App',
         description:
-            'learn GetX - sqflite - Architecture MVC -It allows users to create and manage their notes in an organized and simple way, with an attractive and attractive user interface.',
+            'Notes management app - Responsive design, light and dark modes, sqflite - Architecture MVC -It allows users to create and manage their notes in an organized and simple way, with an attractive and attractive user interface.',
         imagePath: ImageApp.noteApp,
         technologies: [],
         link: 'https://github.com/Ayoub-kraamui/noteApp.git',
