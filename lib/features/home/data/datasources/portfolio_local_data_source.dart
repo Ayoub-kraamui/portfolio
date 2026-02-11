@@ -161,10 +161,18 @@ class PortfolioLocalDataSourceImpl implements PortfolioLocalDataSource {
       ProjectModel(
         title: 'Qayd',
         description:
-            'Modular Flutter app (Android/iOS) for financial workflows with authentication, dashboard, settings, and transaction management. Uses Bloc for state management and Sqflite for local storage with platform plugin support..',
-        imagePath: ImageApp.coffeeApp,
+            'Modular Flutter app (Android/iOS) for financial workflows with authentication, dashboard, settings, and transaction management. Uses Bloc for state management and Sqflite for local storage with platform plugin support.',
+        imagePath: ImageApp.qaydApp,
         technologies: [],
         link: 'https://github.com/Ayoub-kraamui/qayd',
+      ),
+      ProjectModel(
+        title: 'Note App',
+        description:
+            'learn GetX - sqflite - Architecture MVC -It allows users to create and manage their notes in an organized and simple way, with an attractive and attractive user interface.',
+        imagePath: ImageApp.noteApp,
+        technologies: [],
+        link: 'https://github.com/Ayoub-kraamui/note_app',
       ),
     ];
   }
