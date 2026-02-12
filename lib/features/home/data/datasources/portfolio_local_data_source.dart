@@ -27,7 +27,7 @@ class PortfolioLocalDataSourceImpl implements PortfolioLocalDataSource {
             'Store and promotion management, customer service, and enhancing customer experience. Managing digital ad campaigns (Google, Meta, TikTok). SEO improvements.',
       ),
       ExperienceModels(
-        company: 'Freelancer',
+        company: 'Hsoub',
         role: 'Flutter Developer',
         duration: '2024 - Present',
         location: 'Ibb, YEM',
