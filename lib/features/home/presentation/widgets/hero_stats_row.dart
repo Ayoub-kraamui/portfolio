@@ -13,7 +13,7 @@ class HeroStatsRow extends StatelessWidget {
       children: [
         const StatItem(value: '1+', label: AppStrings.statsExp),
         const StatDivider(),
-        const StatItem(value: '5+', label: AppStrings.statsProjects),
+        const StatItem(value: '9+', label: AppStrings.statsProjects),
         const StatDivider(),
         const StatItem(value: '5+', label: AppStrings.statsClients),
       ],
