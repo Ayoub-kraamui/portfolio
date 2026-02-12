@@ -19,7 +19,7 @@ class PortfolioLocalDataSourceImpl implements PortfolioLocalDataSource {
     // await Future.delayed(const Duration(milliseconds: 300));
     return const [
       ExperienceModels(
-        company: 'evorie-ksa.com',
+        company: 'evorie-ksa',
         role: 'Digital Marketing',
         duration: '2025 - Present',
         location: 'Riyadh, Saudi',
