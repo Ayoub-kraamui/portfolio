@@ -44,7 +44,7 @@ class PortfolioBloc extends Bloc<PortfolioEvent, PortfolioState> {
     Emitter<PortfolioState> emit,
   ) async {
     try {
-      await urlLauncherService.launchUrl(event.url);
+      await urlLauncherService.openUrl(event.url);
     } catch (_) {
       // إما معالجة الخطأ أو عدم القيام بأي شيء.
     }
