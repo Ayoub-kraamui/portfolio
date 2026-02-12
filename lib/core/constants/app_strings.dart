@@ -34,6 +34,7 @@ class AppStrings {
     'Front-end development using Flutter, back-end development using PHP, Rest API, Firebase.',
     'Junior Odoo Developer specialized in Python, with hands-on experience in developing and customizing Odoo modules, working with XML views, PostgreSQL database, and REST API integration.',
     'Information Technology project management using Waterfall and Agile methodology.',
+    'Digital marketing and search engine optimization.',
     'UX-UI designer using Figma and Adobe XD.',
     'Graphic Designer using Adobe programs.',
     'Able to work effectively in a team.',
