@@ -30,7 +30,7 @@ class AppStrings {
   static const String aboutTitle = 'About Me';
   static const List<String> aboutDescription = [
     'Information Technology Engineer from University of Science and Technology.',
-    'Specialized in mobile application development using Flutter framework.',
+    'Mobile app developer using the Flutter framework, Clean Code, State Management, Bloc, Provider, GetX, Design Patterns, MVVM, MVC.',
     'Front-end development using Flutter, back-end development using PHP, Rest API, Firebase.',
     'Junior Odoo Developer specialized in Python, with hands-on experience in developing and customizing Odoo modules, working with XML views, PostgreSQL database, and REST API integration.',
     'Information Technology project management using Waterfall and Agile methodology.',
