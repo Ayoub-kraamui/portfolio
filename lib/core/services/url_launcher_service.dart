@@ -9,8 +9,9 @@ class UrlLauncherService {
   }
 
   Future<void> openCv() async {
+    // استخدام المسار النسبي للملف في مجلد web
     final uri = Uri.parse('assets/cv/ayoub_karami.pdf');
-    // استخدام وضع التطبيق الخارجي لعرض ملفات PDF
-    await launchUrl(uri, mode: LaunchMode.externalApplication);
+    // فتح الملف في تبويب جديد للمتصفح
+    await launchUrl(uri, mode: LaunchMode.platformDefault);
   }
 }
